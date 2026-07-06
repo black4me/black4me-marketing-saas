@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    direction: rtl;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-b4m-black text-white font-arabic antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,201,60,0.08), transparent),
+      radial-gradient(ellipse 60% 50% at 80% 50%, rgba(124,58,237,0.05), transparent);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-b4m-gold text-b4m-black;
+  }
+}
+
+@layer components {
+  .b4m-card {
+    @apply bg-b4m-card border border-b4m-border rounded-2xl p-6 transition-all duration-300;
+  }
+  .b4m-card-hover {
+    @apply hover:border-b4m-gold/40 hover:shadow-gold-glow hover:-translate-y-1;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-gold-gradient text-b4m-black font-bold rounded-xl shadow-lg hover:shadow-gold-glow hover:scale-[1.02] transition-all duration-200;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-b4m-card border border-b4m-border text-white font-semibold rounded-xl hover:border-b4m-gold/50 transition-all duration-200;
+  }
+  .badge-gold {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-gold-gradient text-b4m-black;
+  }
+  .badge-red {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-gradient text-white;
+  }
+  .badge-purple {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-purple-gradient text-white;
+  }
+  .badge-green {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-b4m-green/20 text-b4m-green border border-b4m-green/40;
+  }
+  .gradient-text {
+    @apply bg-gold-gradient bg-clip-text text-transparent;
+  }
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(255,201,60,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,201,60,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .scrollbar-gold::-webkit-scrollbar { width: 8px; height: 8px; }
+  .scrollbar-gold::-webkit-scrollbar-track { @apply bg-b4m-dark; }
+  .scrollbar-gold::-webkit-scrollbar-thumb { @apply bg-b4m-gold/30 rounded-full; }
+  .scrollbar-gold::-webkit-scrollbar-thumb:hover { @apply bg-b4m-gold/50; }
+}
